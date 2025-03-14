@@ -9,7 +9,7 @@ const Footer = () => {
         <div className="row gx-5 pb-10 pt-[52px]">
           <div className="mt-12 col-12 md:col-6 lg:col-3">
             <a href="index.html">
-              <img src={logo} alt="Logo" />
+              <img src={logo} alt="Logo" className="w-32"/>
             </a>
             <p className="mt-6">
               This project is developed to fulfill a mini project task from Dibimbing.id,
