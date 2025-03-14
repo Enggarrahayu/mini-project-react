@@ -45,10 +45,10 @@ const Navbar = () => {
             <a href="" className="nav-link active">Home</a>
           </li>
           <li className="nav-item">
-            <a href="about.html" className="nav-link">User List</a>
+            <a href="about.html" className="nav-link">Users</a>
           </li>         
           <li className="nav-item">
-            <a href="contact.html" className="nav-link">About</a>
+            <a href="contact.html" className="nav-link">Profile</a>
           </li>
           <li className="nav-item mt-3.5 lg:hidden">
             <a className="btn btn-white btn-sm border-border" href="signin.html">Sign Up Now</a>
