@@ -1,4 +1,5 @@
 import React from "react";
+import { Link } from "react-router-dom";
 
 const UserCard = ({users}) => {
   return (
@@ -14,8 +15,11 @@ const UserCard = ({users}) => {
             </div>
             <div className="flex-1 w-full px-4 py-8 mt-6 bg-white shadow-lg rounded-xl">
              <h5 className="font-primary">{item.first_name} { item.last_name }</h5>
-             <p className="mt-1.5">{ item.email }</p>
-            </div>
+             <p className="mt-1.5">{item.email}</p>
+             <button>
+              <Link to={`/user-detail/${item.id}`} className="block w-full mt-2 btn btn-sm btn-primary sm:w-auto">Detail</Link>
+           </button>
+           </div>          
           </div>
         ))}
       

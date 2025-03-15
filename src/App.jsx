@@ -4,6 +4,7 @@ import Home from "./pages/Home"
 import UserList from "./pages/UserList"
 import { AuthProvider } from "./context/AuthContext"
 import ProtectedRoute from "./routes/ProtectedRoute"
+import UserDetail from "./pages/UserDetail"
 
 function App() {
   return (
@@ -18,6 +19,11 @@ function App() {
                 <UserList />
               </ProtectedRoute>}>
             </Route>  
+            <Route path="/user-detail/:id" element={
+              <ProtectedRoute>
+                <UserDetail />
+              </ProtectedRoute>}
+            ></Route>
           </Routes>
         </BrowserRouter>
      </AuthProvider>

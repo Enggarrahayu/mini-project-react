@@ -14,7 +14,7 @@ const Navbar = () => {
   };
   
   return (
-    <header>
+    <header className="bg-theme-light/50">
       <nav className="container flex items-center justify-between navbar">
         {/* Logo */}
         <div className="order-0">
@@ -77,7 +77,7 @@ const Navbar = () => {
           <li className="nav-item mt-3.5 lg:hidden">
             <NavLink 
             to="/signin" 
-            className="btn btn-white btn-sm border-border"
+            className="mt-8 btn btn-white"
           >
             Sign Up Now
             </NavLink>           
