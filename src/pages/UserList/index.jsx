@@ -33,7 +33,7 @@ const UserList = () => {
       <section>
         <div class="container">                           
           <div className="row">
-            <div className="mx-auto text-center lg:col-6">
+            <div className="mx-auto mt-8 text-center lg:col-6 md:mt-0">
               <h2>User List</h2>
               <p className="mt-4">
                 View all the registered users in the payroll system, including employees and administrators. 
