@@ -1,6 +1,7 @@
 import { useState } from "react";
 import logo from '../../assets/img/logo.png'
 import '../../assets/style/main.scss'
+import { Link, NavLink } from "react-router-dom";
 const Navbar = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
 
@@ -41,18 +42,38 @@ const Navbar = () => {
             isMenuOpen ? "block" : "hidden"
           }`}
         >
-          <li className="nav-item">
-            <a href="" className="nav-link active">Home</a>
-          </li>
-          <li className="nav-item">
-            <a href="about.html" className="nav-link">Users</a>
-          </li>         
-          <li className="nav-item">
-            <a href="contact.html" className="nav-link">Profile</a>
-          </li>
-          <li className="nav-item mt-3.5 lg:hidden">
-            <a className="btn btn-white btn-sm border-border" href="signin.html">Sign Up Now</a>
-          </li>
+        <li className="nav-item">
+          <NavLink 
+            to="/" 
+            className={({ isActive }) => isActive ? "nav-link active" : "nav-link"}
+          >
+            Home
+          </NavLink>
+        </li>
+        <li className="nav-item">
+          <NavLink 
+            to="/users" 
+            className={({ isActive }) => isActive ? "nav-link active" : "nav-link"}
+          >
+            Users
+          </NavLink>
+        </li>
+        <li className="nav-item">
+          <NavLink 
+            to="/profile" 
+            className={({ isActive }) => isActive ? "nav-link active" : "nav-link"}
+          >
+            Profile
+          </NavLink>
+        </li>
+        <li className="nav-item mt-3.5 lg:hidden">
+          <NavLink 
+            to="/signin" 
+            className="btn btn-white btn-sm border-border"
+          >
+            Sign Up Now
+          </NavLink>
+        </li>
         </ul>
 
         <div className="items-center order-1 hidden ml-auto md:order-2 md:ml-0 lg:flex">
