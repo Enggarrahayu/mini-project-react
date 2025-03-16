@@ -84,7 +84,7 @@ const UserList = () => {
             onPageChange={handlePageClick}
             containerClassName="flex items-center space-x-2"
             pageClassName="bg-white border border-gray-300 text-gray-700 rounded-md px-3 py-1 hover:bg-gray-200 transition"
-            activeClassName="bg-primary text-white border border-primary"
+            activeClassName="bg-black text-white"
             previousClassName="px-4 py-2 bg-gray-300 border border-gray-400 rounded-md hover:bg-gray-200 transition"
             nextClassName="px-4 py-2 bg-gray-300 border border-gray-400 rounded-md hover:bg-gray-200 transition"
             disabledClassName="opacity-50 cursor-not-allowed"

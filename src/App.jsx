@@ -27,6 +27,11 @@ function App() {
                 <UserDetail />
               </ProtectedRoute>}
             ></Route>
+            <Route path="/home" element={
+              <ProtectedRoute>
+                <Home/>
+              </ProtectedRoute>}>
+            </Route>
           </Routes>
         </BrowserRouter>
      </AuthProvider>

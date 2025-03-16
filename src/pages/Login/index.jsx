@@ -33,7 +33,7 @@ const Login = () => {
       setMessage("Login successful! Redirecting...");
       setMessageType("success");
 
-      setTimeout(() => navigate("/"), 2000);
+      setTimeout(() => navigate("/home"), 2000);
     } catch (error) {
       setMessage(error.response?.data?.error || "Login failed. Please try again.");
       setMessageType("error");
