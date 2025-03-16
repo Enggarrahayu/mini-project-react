@@ -1,6 +1,6 @@
 import React, { useState } from "react";
-import { NavLink, useNavigate } from "react-router-dom";
-import { useAuth } from "../../context/AuthContext"; // Import AuthContext
+import { useNavigate } from "react-router-dom";
+import { useAuth } from "../../context/AuthContext";
 import axios from "axios";
 import Navbar from "../../components/Navbar";
 import Footer from "../../components/Footer";
@@ -8,8 +8,8 @@ import flower from "../../assets/img/flower.svg";
 import loginBanner from "../../assets/img/login-banner-bg.svg";
 import image1 from "../../assets/img/img-1.png";
 
-const Login = () => {
-  const { login } = useAuth(); // Use authentication context
+const Register = () => {
+  const { login } = useAuth();
   const navigate = useNavigate();
   
   const [email, setEmail] = useState("");
@@ -24,18 +24,18 @@ const Login = () => {
     setMessage("");
 
     try {
-      const response = await axios.post("https://reqres.in/api/login", {
+      const response = await axios.post("https://reqres.in/api/register", {
         email,
         password,
       });
 
       login(response.data.token);
-      setMessage("Login successful! Redirecting...");
+      setMessage("Registration successful! Redirecting...");
       setMessageType("success");
 
       setTimeout(() => navigate("/"), 2000);
     } catch (error) {
-      setMessage(error.response?.data?.error || "Login failed. Please try again.");
+      setMessage(error.response?.data?.error || "Registration failed. Please try again.");
       setMessageType("error");
     } finally {
       setLoading(false);
@@ -48,11 +48,10 @@ const Login = () => {
       <section>
         <div className="container max-w-full">
           <div className="row">
-            {/* Left Panel */}
             <div className="min-h-[980px] bg-white py-10 lg:col-6 lg:py-[114px]">
               <div className="mx-auto w-full max-w-[480px]">
                 <img className="mb-8" src={flower} alt="Flower Icon" />
-                <h1 className="mb-4">Login</h1>
+                <h1 className="mb-4">Register</h1>
                 
                 {message && (
                   <p className={`mb-4 text-lg text-center ${messageType === "success" ? "text-green-600" : "text-primary"}`}>
@@ -90,12 +89,8 @@ const Login = () => {
                     className="block w-full mt-10 btn btn-primary"
                     disabled={loading}
                   >
-                    {loading ? "Logging in..." : "Sign In"}
+                    {loading ? "Registering..." : "Sign Up"}
                   </button>
-
-                  <p className="mt-6 text-center">
-                    Can't <span className="text-dark">log in</span>? <NavLink to="/register" className="text-dark">Sign up</NavLink>  to create an account
-                  </p>
                 </form>
               </div>
             </div>
@@ -124,4 +119,4 @@ const Login = () => {
   );
 };
 
-export default Login;
+export default Register;

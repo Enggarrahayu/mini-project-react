@@ -5,6 +5,7 @@ import UserList from "./pages/UserList"
 import { AuthProvider } from "./context/AuthContext"
 import ProtectedRoute from "./routes/ProtectedRoute"
 import UserDetail from "./pages/UserDetail"
+import Register from "./pages/Register"
 
 function App() {
   return (
@@ -14,6 +15,7 @@ function App() {
           <Routes>
             <Route path="/" element={<Home/>}></Route>
             <Route path="/login" element={<Login />}></Route>
+            <Route path="/register" element={<Register />} />
             <Route path="/users" element={
               <ProtectedRoute>
                 <UserList />
