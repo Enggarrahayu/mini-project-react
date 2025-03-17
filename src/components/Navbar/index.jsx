@@ -89,10 +89,13 @@ const Navbar = () => {
         <button onClick={handleLogout} className="btn btn-white btn-sm border-border">
           Logout
         </button>
-        ) : (
-          <a className="btn btn-white btn-sm" href="/signup">
+          ) : (
+            <NavLink 
+            to="/login" 
+            className="btn btn-white btn-sm"
+          >
             Sign Up Now
-          </a>
+            </NavLink>             
         )}
         </div>
       </nav>
