@@ -1,3 +1,15 @@
+# List of Libraries Used
+- react-icons
+- axios
+- react-router-dom
+- react-paginate
+- tailwind css
+- FullCalendar
+
+- # List of Additional Features
+- User search functionality on the user list page
+- View authenticated user's profile
+
 # React + Vite
 
 This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
