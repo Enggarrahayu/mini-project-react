@@ -28,12 +28,25 @@ const Login = () => {
         email,
         password,
       });
-
-      login(response.data.token);
+  
+      const token = response.data.token;
+      login(token); 
+  
+      const usersResponse = await axios.get("https://reqres.in/api/users?per_page=12");
+      const users = usersResponse.data.data; 
+  
+      // Find user by email and store it in localstorage
+      const userData = users.find((user) => user.email === email);
+      if (userData) {
+        localStorage.setItem("userData", JSON.stringify(userData)); 
+      }
+  
+      console.log("userdata",userData);
       setMessage("Login successful! Redirecting...");
       setMessageType("success");
-
-      setTimeout(() => navigate("/home"), 2000);
+  
+      setTimeout(() => navigate("/home"), 2000); 
+  
     } catch (error) {
       setMessage(error.response?.data?.error || "Login failed. Please try again.");
       setMessageType("error");

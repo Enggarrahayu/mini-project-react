@@ -7,6 +7,7 @@ import ProtectedRoute from "./routes/ProtectedRoute"
 import UserDetail from "./pages/UserDetail"
 import Register from "./pages/Register"
 import LandingPage from "./pages/LandingPage"
+import Profile from "./pages/Profile"
 
 function App() {
   return (
@@ -17,6 +18,11 @@ function App() {
             <Route path="/" element={<LandingPage/>}></Route>
             <Route path="/login" element={<Login />}></Route>
             <Route path="/register" element={<Register />} />
+            <Route path="/profile" element={
+              <ProtectedRoute>
+                <Profile />
+              </ProtectedRoute>}>
+            </Route>
             <Route path="/users" element={
               <ProtectedRoute>
                 <UserList />

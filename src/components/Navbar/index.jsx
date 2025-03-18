@@ -18,9 +18,9 @@ const Navbar = () => {
       <nav className="container flex items-center justify-between navbar">
         {/* Logo */}
         <div className="order-0">
-          <a>
+          <NavLink to="/">          
             <img src={logo} height="20" width="147" alt="logo" />
-          </a>
+          </NavLink>         
         </div>
 
         {/* Navbar Toggler */}
